@@ -12,18 +12,28 @@ import { fastify } from 'fastify'
 
 const server = fastify()
 
-server.get('/', () => {
+// POST http://localhost:3333/videos
+
+server.post('/videos', () => {
   return 'Hello World!'
 })
 
 
-server.get('/hello', () => {
+server.get('/videos', () => {
   return 'Hello Jumbumtron'
 })
 
-server.get('/node', () => {
+// PUT http://localhost:3333/videos/id
+
+server.put('/videos/:id', () => {
   return 'Hello Node.js'
 })
+
+
+server.delete('/videos/:id', () => {
+  return 'Hello Node.js'
+})
+
 
 server.listen({
   port: 3333,
