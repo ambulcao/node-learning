@@ -1,34 +1,31 @@
-//import { createServer } from 'node:http'
-
-//const server = createServer((request, response) => {
-//  response.write('Fiche Technique Portail Santa Battant Sur Mesure')
-
-//  return response.end()
-//})
-
-//server.listen(3333)
-
 import { fastify } from 'fastify'
+import { DatabaseMemory } from './database-memory.js'
 
 const server = fastify()
 
-// POST http://localhost:3333/videos
+const database = new DatabaseMemory()
 
-server.post('/videos', () => {
-  return 'Hello World!'
+
+
+server.post('/videos', (request, reply) => {
+  database.create({
+    title: 'Video 01',
+    description: 'Esse é o video 01',
+    duration: 180,
+  })
+
+  console.log(database.list())
+
+  return reply.status(201).send()
 })
-
 
 server.get('/videos', () => {
   return 'Hello Jumbumtron'
 })
 
-// PUT http://localhost:3333/videos/id
-
 server.put('/videos/:id', () => {
   return 'Hello Node.js'
 })
-
 
 server.delete('/videos/:id', () => {
   return 'Hello Node.js'
