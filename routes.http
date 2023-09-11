@@ -24,3 +24,8 @@ Content-Type: application/json
   "url": "https://pobretv.net/assistir-filme-gran-turismo-de-jogador-a-corredor-online",
   "duration": 180
 }
+
+
+###
+
+DELETE http://localhost:3333/videos/aee31129-d3fd-483b-9016-46348bb78364
