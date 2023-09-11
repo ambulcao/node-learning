@@ -12,3 +12,15 @@ Content-Type: application/json
 
 
 GET http://localhost:3333/videos
+
+
+###
+
+PUT http://localhost:3333/videos/aee31129-d3fd-483b-9016-46348bb78364
+Content-Type: application/json
+
+{
+  "title": "Gran Turismo de Jogador a Corredor Super",
+  "url": "https://pobretv.net/assistir-filme-gran-turismo-de-jogador-a-corredor-online",
+  "duration": 180
+}
