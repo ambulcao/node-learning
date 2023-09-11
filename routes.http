@@ -1,1 +1,14 @@
 POST http://localhost:3333/videos
+Content-Type: application/json
+
+{
+  "title": "Gran Turismo de Jogador a Corredor",
+  "url": "https://pobretv.net/assistir-filme-gran-turismo-de-jogador-a-corredor-online",
+  "duration": 180
+}
+
+
+###
+
+
+GET http://localhost:3333/videos

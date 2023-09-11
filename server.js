@@ -8,19 +8,24 @@ const database = new DatabaseMemory()
 
 
 server.post('/videos', (request, reply) => {
-  database.create({
-    title: 'Video 01',
-    description: 'Esse é o video 01',
-    duration: 180,
-  })
 
-  console.log(database.list())
+  const { title, url, duration } = request.body
+
+  database.create({
+    title,
+    url,
+    duration,
+  })
 
   return reply.status(201).send()
 })
 
 server.get('/videos', () => {
-  return 'Hello Jumbumtron'
+  const videos = database.list()
+
+  console.log(videos)
+
+  return videos
 })
 
 server.put('/videos/:id', () => {
